@@ -2,11 +2,12 @@
 
 Simple collector for RuuviTag sensor data. Pushes sensor data to cloud with fixed interval.
 
-```
-git clone https://github.com/artoaaltonen/hub-ruuvi-collector.git
-cd hub-ruuvi-collector
-npm install
-node index.js
+```bash
+$ git clone https://github.com/artoaaltonen/hub-ruuvi-collector.git
+$ cd hub-ruuvi-collector
+$ npm install
+$ sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
+$ node index.js
 ```
 
 ## Hub API
