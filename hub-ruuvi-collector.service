@@ -1,0 +1,16 @@
+[Unit]
+Description=Ruuvi Sensor Data Collector
+Wants=network-online.target bluetooth.target
+After=network-online.target bluetooth.target
+
+[Service]
+ExecStart=/home/pi/hub-ruuvi-collector/index.js
+Restart=always
+User=nobody
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/pi/hub-ruuvi-collector
+
+[Install]
+WantedBy=multi-user.target
